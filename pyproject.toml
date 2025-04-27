@@ -1,9 +1,16 @@
 [project]
 name = "eggdishes"
-version = "0.1.0"
+version = "0.2.0"
 description = "Egg Recipe CLI"
 requires-python = ">=3.13"
 dependencies = []
 
 [tool.uv.workspace]
-members = ["eggdishes-core", "eggdishes-main"]
+members = [
+    "eggdishes-core",
+    "eggdishes-main",
+    "eggdishes-scrambled",
+    "eggdishes-sunnysideup",
+    "eggdishes-poached",
+    "eggdishes-boiled",
+]

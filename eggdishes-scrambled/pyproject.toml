@@ -1,0 +1,12 @@
+[project]
+name = "eggdishes-scrambled"
+version = "0.2.0"
+description = "scrambled egg module for eggdishes"
+dependencies = ["eggdishes-core"]
+
+[tool.uv.sources]
+eggdishes-core = { workspace = true }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
