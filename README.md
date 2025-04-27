@@ -1,5 +1,9 @@
 [uv workspaces](https://docs.astral.sh/uv/concepts/projects/workspaces/) のtoy exampleです。
 
+解説記事はこちら: [uv workspacesでスッキリ作るPythonモノレポ (@mocobeta)](https://blog.mocobeta.dev/posts/20250427-entry-monorepo-with-uv-workspaces/)
+
+## 動作確認方法
+
 ```
 # 環境セットアップ
 $ git clone https://github.com/mocobeta/uv-workspaces-eggdishes.git
