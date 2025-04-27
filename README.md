@@ -1,0 +1,1 @@
+This is a toy example for [uv workspaces](https://docs.astral.sh/uv/concepts/projects/workspaces/).
