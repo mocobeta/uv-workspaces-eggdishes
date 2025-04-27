@@ -14,3 +14,8 @@ members = [
     "eggdishes-poached",
     "eggdishes-boiled",
 ]
+
+[dependency-groups]
+dev = [
+    "pyright>=1.1.400",
+]
