@@ -1,0 +1,10 @@
+[project]
+name = "eggdishes-core"
+version = "0.1.0"
+description = "core module for eggdishes"
+readme = "README.md"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
