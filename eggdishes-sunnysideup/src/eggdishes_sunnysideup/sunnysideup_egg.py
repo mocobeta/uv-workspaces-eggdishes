@@ -1,4 +1,5 @@
 from eggdishes_core.lib import EggDish
+import eggdishes_core
 
 class SunnysideUpEgg(EggDish):
     name = "Sunny Side Up Egg"
@@ -19,3 +20,9 @@ class SunnysideUpEgg(EggDish):
 6. 塩・こしょうで味付けする
 完成！
 """
+
+@eggdishes_core.hookimpl
+def register_eggdish(recipes):
+    def create():
+        return SunnysideUpEgg()
+    recipes["sunnysideup"] = create

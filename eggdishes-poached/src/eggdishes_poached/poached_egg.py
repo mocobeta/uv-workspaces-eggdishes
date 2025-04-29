@@ -1,4 +1,5 @@
 from eggdishes_core.lib import EggDish
+import eggdishes_core
 
 class PoachedEgg(EggDish):
     name = "Poached Egg"
@@ -19,3 +20,9 @@ class PoachedEgg(EggDish):
     おたまや穴あきスプーンでそっとすくい上げ、キッチンペーパーなどで水気を取ります。
 完成！
 """
+
+@eggdishes_core.hookimpl
+def register_eggdish(recipes):
+    def create():
+        return PoachedEgg()
+    recipes["poached"] = create
