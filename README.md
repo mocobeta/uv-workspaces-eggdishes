@@ -1,56 +1,58 @@
-[uv workspaces](https://docs.astral.sh/uv/concepts/projects/workspaces/) のtoy exampleです。
+[uv workspaces](https://docs.astral.sh/uv/concepts/projects/workspaces/) + [pluggy](https://pluggy.readthedocs.io/en/latest/) のtoy exampleです。
 
 解説記事はこちら: [uv workspacesでスッキリ作るPythonモノレポ (@mocobeta)](https://blog.mocobeta.dev/posts/20250427-entry-monorepo-with-uv-workspaces/)
 
-## 動作確認方法
+## セットアップ
 
 ```
-# 環境セットアップ
 $ git clone https://github.com/mocobeta/uv-workspaces-eggdishes.git
 $ cd uv-workspaces-eggdishes/
 $ uv venv
+
+# 動作テスト (プラグインなし)
 $ uv sync --package eggdishes-main
+$ uv run eggdishes list
+Available egg dish recipes:
+- fresh
 
-# 動作テスト
-$ uv run eggdishes --help
-Usage: eggdishes [OPTIONS] COMMAND [ARGS]...
+$ uv run eggdishes recipe fresh
+Recipe for 採れたて卵:
+ご飯に新鮮な卵とかつお節をのせて、醤油をかけて召し上がれ！
 
-Options:
-  --help  Show this message and exit.
+$ uv run eggdishes recipe spam
+No recipe found for spam.
+```
 
-Commands:
-  recipe  Show the recipe for an egg dish.
+## ビルドと動作テスト（プラグインあり）
 
-$ uv run eggdishes recipe --help
-Usage: eggdishes recipe [OPTIONS]
-                        [[boiled|poached|scrambled|sunnysideup|fresh]]
+```
+$ uv build --all-packages
+...
+Successfully built dist/eggdishes_boiled-0.2.0.tar.gz
+Successfully built dist/eggdishes_boiled-0.2.0-py2.py3-none-any.whl
+Successfully built dist/eggdishes_core-0.2.0.tar.gz
+Successfully built dist/eggdishes_core-0.2.0-py2.py3-none-any.whl
+...
+```
 
-  Show the recipe for an egg dish.
+適当なディレクトリに環境を作り，ビルドしたすべてのパッケージをインストールする
 
-Options:
-  --help  Show this message and exit.
+```
+$ mkdir -p ~/temp/eggdishes-test
+$ cd ~/temp/eggdishes-test
+$ python -m venv .venv
+$ . .venv/bin/activate
+$ pip install <path-to-eggdishes-repo>/dist/*.whl
 
-$ uv run eggdishes recipe boiled
-Recipe for Boiled Egg:
+$ eggdishes list
+Available egg dish recipes:
+- fresh
+- sunnysideup
+- poached
+- boiled
+- scrambled
 
-1. 卵を常温に戻す
-    冷蔵庫から出したばかりの卵はヒビが入りやすいので、10〜20分ほど室温に置きます。
-2. 鍋に卵を並べる
-    卵同士がぶつからないように注意しながら鍋に並べます。
-3. 水を入れる
-    卵がしっかり浸るくらいまで水を注ぎます。
-4. 火にかける
-    中火で加熱し、沸騰させます。
-5. 茹で時間を調整する
-    沸騰したらタイマーをセット！お好みの仕上がりに合わせて茹で時間を変えます。
-    - 半熟（とろとろ）：6〜7分
-    - 半熟（ねっとり）：8〜9分
-    - 固ゆで（しっかり）：10〜12分
-6. 冷水にとる
-    茹で上がったらすぐに冷水（または氷水）に移して冷やします。殻がむきやすくなります。
-完成！
-
-$ uv run eggdishes recipe sunnysideup
+$ eggdishes recipe sunnysideup
 Recipe for Sunny Side Up Egg:
 
 1. フライパンを温める

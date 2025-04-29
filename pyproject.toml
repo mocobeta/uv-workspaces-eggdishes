@@ -1,6 +1,6 @@
 [project]
 name = "eggdishes"
-version = "0.2.0"
+version = "0.3.0"
 description = "Egg Recipe CLI"
 requires-python = ">=3.13"
 dependencies = []
