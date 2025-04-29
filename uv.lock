@@ -35,7 +35,7 @@ wheels = [
 
 [[package]]
 name = "eggdishes"
-version = "0.2.0"
+version = "0.4.0"
 source = { virtual = "." }
 
 [package.dev-dependencies]
@@ -54,7 +54,7 @@ dev = [
 
 [[package]]
 name = "eggdishes-boiled"
-version = "0.2.0"
+version = "0.4.0"
 source = { editable = "eggdishes-boiled" }
 dependencies = [
     { name = "eggdishes-core" },
@@ -65,7 +65,7 @@ requires-dist = [{ name = "eggdishes-core", editable = "eggdishes-core" }]
 
 [[package]]
 name = "eggdishes-core"
-version = "0.2.0"
+version = "0.4.0"
 source = { editable = "eggdishes-core" }
 dependencies = [
     { name = "pluggy" },
@@ -76,7 +76,7 @@ requires-dist = [{ name = "pluggy", specifier = ">=1.5.0" }]
 
 [[package]]
 name = "eggdishes-main"
-version = "0.2.0"
+version = "0.4.0"
 source = { editable = "eggdishes-main" }
 dependencies = [
     { name = "click" },
@@ -91,7 +91,7 @@ requires-dist = [
 
 [[package]]
 name = "eggdishes-poached"
-version = "0.2.0"
+version = "0.4.0"
 source = { editable = "eggdishes-poached" }
 dependencies = [
     { name = "eggdishes-core" },
@@ -102,7 +102,7 @@ requires-dist = [{ name = "eggdishes-core", editable = "eggdishes-core" }]
 
 [[package]]
 name = "eggdishes-scrambled"
-version = "0.2.0"
+version = "0.4.0"
 source = { editable = "eggdishes-scrambled" }
 dependencies = [
     { name = "eggdishes-core" },
@@ -113,7 +113,7 @@ requires-dist = [{ name = "eggdishes-core", editable = "eggdishes-core" }]
 
 [[package]]
 name = "eggdishes-sunnysideup"
-version = "0.2.0"
+version = "0.4.0"
 source = { editable = "eggdishes-sunnysideup" }
 dependencies = [
     { name = "eggdishes-core" },
