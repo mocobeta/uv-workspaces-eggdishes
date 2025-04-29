@@ -1,2 +1,1 @@
-def hello() -> str:
-    return "Hello from eggdishes-core!"
+from .hookspecs import hookimpl  # noqa: F401

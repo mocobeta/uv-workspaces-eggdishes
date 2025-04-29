@@ -1,6 +1,6 @@
 [project]
 name = "eggdishes-boiled"
-version = "0.2.0"
+version = "0.3.0"
 description = "boiled egg module for eggdishes"
 dependencies = ["eggdishes-core"]
 
@@ -10,3 +10,6 @@ eggdishes-core = { workspace = true }
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[project.entry-points."eggdishes"]
+"boiled" = "eggdishes_boiled.boiled_egg"

@@ -1,23 +1,12 @@
 [project]
 name = "eggdishes-main"
-version = "0.2.0"
+version = "0.3.0"
 description = "application module for eggdishes"
 readme = "README.md"
-dependencies = [
-    "click>=8.1.8",
-    "eggdishes-core",
-    "eggdishes-boiled",
-    "eggdishes-poached",
-    "eggdishes-scrambled",
-    "eggdishes-sunnysideup",
-]
+dependencies = ["click>=8.1.8", "eggdishes-core"]
 
 [tool.uv.sources]
 eggdishes-core = { workspace = true }
-eggdishes-boiled = { workspace = true }
-eggdishes-poached = { workspace = true }
-eggdishes-scrambled = { workspace = true }
-eggdishes-sunnysideup = { workspace = true }
 
 [project.scripts]
 eggdishes = "eggdishes_main:main"

@@ -1,13 +1,21 @@
 import click
-from eggdishes_core.fresh_egg import FreshEgg
-from eggdishes_boiled.boiled_egg import BoiledEgg
-from eggdishes_poached.poached_egg import PoachedEgg
-from eggdishes_scrambled.scrambled_egg import ScrambledEgg
-from eggdishes_sunnysideup.sunnysideup_egg import SunnysideUpEgg
+from .plugins import register_eggdishes, get_available_recipes, get_recipe
 
 @click.group()
 def cli():
     pass
+
+@cli.command(
+    "list",
+    help="List available egg dish recipes."
+)
+def list_recipes():
+    register_eggdishes()
+    available_recipes = get_available_recipes()
+    click.echo("Available egg dish recipes:")
+    for recipe in available_recipes:
+        click.echo(f"- {recipe}")
+
 
 @cli.command(
     "recipe",
@@ -15,22 +23,14 @@ def cli():
 )
 @click.argument(
     "dish",
-    type=click.Choice(["boiled", "poached", "scrambled", "sunnysideup", "fresh"]),
+    type=str,
     default="fresh",
 )
 def show_recipe(dish: str):
-    """Show the recipe for a fresh egg dish."""
-    egg_dish = None
-    if dish == "boiled":
-        egg_dish = BoiledEgg()
-    elif dish == "poached":
-        egg_dish = PoachedEgg()
-    elif dish == "scrambled":
-        egg_dish = ScrambledEgg()
-    elif dish == "sunnysideup":
-        egg_dish = SunnysideUpEgg()
+    register_eggdishes()
+    recipe = get_recipe(dish)
+    if recipe:
+        click.echo(f"Recipe for {recipe.name}:")
+        click.echo(recipe.recipe())
     else:
-        egg_dish = FreshEgg()
-    click.echo(f"Recipe for {egg_dish.name}:")
-    click.echo(egg_dish.recipe())
-
+        click.echo(f"No recipe found for {dish}.")

@@ -1,6 +1,6 @@
 [project]
 name = "eggdishes-poached"
-version = "0.2.0"
+version = "0.3.0"
 description = "poached egg module for eggdishes"
 dependencies = ["eggdishes-core"]
 
@@ -10,3 +10,6 @@ eggdishes-core = { workspace = true }
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[project.entry-points."eggdishes"]
+"poached" = "eggdishes_poached.poached_egg"

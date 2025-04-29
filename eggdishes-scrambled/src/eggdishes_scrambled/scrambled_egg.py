@@ -1,4 +1,5 @@
 from eggdishes_core.lib import EggDish
+import eggdishes_core
 
 class ScrambledEgg(EggDish):
     name = "Scrambled Egg"
@@ -20,3 +21,9 @@ class ScrambledEgg(EggDish):
     最後に軽く塩・こしょうをふる
 完成！
 """
+
+@eggdishes_core.hookimpl
+def register_eggdish(recipes):
+    def create():
+        return ScrambledEgg()
+    recipes["scrambled"] = create

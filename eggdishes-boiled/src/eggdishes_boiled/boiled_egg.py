@@ -1,4 +1,6 @@
 from eggdishes_core.lib import EggDish
+import eggdishes_core
+
 
 class BoiledEgg(EggDish):
     name = "Boiled Egg"
@@ -22,3 +24,9 @@ class BoiledEgg(EggDish):
     茹で上がったらすぐに冷水（または氷水）に移して冷やします。殻がむきやすくなります。
 完成！
 """
+
+@eggdishes_core.hookimpl
+def register_eggdish(recipes):
+    def create():
+        return BoiledEgg()
+    recipes["boiled"] = create
