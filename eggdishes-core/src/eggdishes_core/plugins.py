@@ -1,6 +1,6 @@
-from eggdishes_core.lib import EggDish
-from eggdishes_core import hookspecs
-from eggdishes_core import fresh_egg
+from .lib import EggDish
+from . import hookspecs
+from . import fresh_egg
 
 import pluggy
 

@@ -1,6 +1,6 @@
 [project]
 name = "eggdishes-main"
-version = "0.3.0"
+version = "0.4.0"
 description = "application module for eggdishes"
 readme = "README.md"
 dependencies = ["click>=8.1.8", "eggdishes-core"]

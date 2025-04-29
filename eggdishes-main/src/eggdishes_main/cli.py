@@ -1,5 +1,5 @@
 import click
-from .plugins import register_eggdishes, get_available_recipes, get_recipe
+from eggdishes_core.plugins import register_eggdishes, get_available_recipes, get_recipe
 
 @click.group()
 def cli():
