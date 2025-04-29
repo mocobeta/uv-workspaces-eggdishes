@@ -1,6 +1,8 @@
 [uv workspaces](https://docs.astral.sh/uv/concepts/projects/workspaces/) + [pluggy](https://pluggy.readthedocs.io/en/latest/) のtoy exampleです。
 
-解説記事はこちら: [uv workspacesでスッキリ作るPythonモノレポ (@mocobeta)](https://blog.mocobeta.dev/posts/20250427-entry-monorepo-with-uv-workspaces/)
+解説記事はこちら
+- [uv workspacesでスッキリ作るPythonモノレポ (@mocobeta)](https://blog.mocobeta.dev/posts/20250427-entry-monorepo-with-uv-workspaces/)
+- [uv workspacesとpluggyで作る，プラッガブルなPythonエコシステム (@mocobeta)](https://blog.mocobeta.dev/posts/20250429-entry-pluggy-uv-workspace/)
 
 ## セットアップ
 
