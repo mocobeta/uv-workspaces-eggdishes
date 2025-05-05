@@ -22,9 +22,7 @@ def register_eggdishes():
     """Register available recipes to the registry."""
     pm = __get_plugin_manager()
     # 環境内のすべてのプラグインフックを呼び出す
-    for recipe in pm.hook.register_eggdish(recipes=__recipes):
-        if recipe:
-            __recipes[recipe.name] = recipe
+    pm.hook.register_eggdish(recipes=__recipes)
 
 
 def get_available_recipes():
