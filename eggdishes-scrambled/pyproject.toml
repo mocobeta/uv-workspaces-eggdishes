@@ -1,6 +1,6 @@
 [project]
 name = "eggdishes-scrambled"
-version = "0.4.0"
+version = "0.5.0"
 description = "scrambled egg module for eggdishes"
 dependencies = ["eggdishes-core"]
 
